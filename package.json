@@ -1,0 +1,40 @@
+{
+  "name": "eslint-plugin-import-with-prefix",
+  "version": "0.0.0",
+  "description": "Enforce specific namespace import to add prefix ",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "eslint-plugin-import-with-prefix",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "dependencies": {
+    "requireindex": "~1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "~6.1.0",
+    "husky": ">=1",
+    "lint-staged": ">=8",
+    "mocha": "^6.2.0",
+    "prettier": "^1.18.2"
+  },
+  "engines": {
+    "node": ">=12.3.1"
+  },
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
